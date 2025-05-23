@@ -1,11 +1,11 @@
-# Use official PHP image with Apache
 FROM php:8.1-apache
 
-# Copy all project files into the Apache server root
 COPY . /var/www/html/
-
-# Enable mod_rewrite if needed
 RUN a2enmod rewrite
 
-# Expose port 80
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 EXPOSE 80
+
+CMD ["docker-entrypoint.sh"]
