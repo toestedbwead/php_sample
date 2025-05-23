@@ -10,6 +10,9 @@ WORKDIR /var/www/html
 # Copy your PHP code to Apache web root
 COPY . /var/www/html/
 
+RUN chown -R www-data:www-data /var/www/html \
+ && chmod -R 755 /var/www/html
+
 # Expose the port (required by Render)
 EXPOSE 80
 
