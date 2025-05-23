@@ -1,5 +1,5 @@
 <?php
-$hrApiUrl = 'http://localhost/eis-integration-test/php_sample/hr_system/employees.php';
+$hrApiUrl = 'https://php-sample-h4v8.onrender.com/hr_system/employees.php';
 
 $response = file_get_contents($hrApiUrl);
 
